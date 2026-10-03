@@ -1,0 +1,21 @@
+# Environments
+.env
+.venv/
+venv/
+ENV/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large files in root (avoid blowing up git size for Streamlit Cloud)
+/*.pdf
+
+# IDEs
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/credentials.toml
