@@ -1,13 +1,7 @@
-[browser]
-# Disable usage statistics collection — prevents TCP connection errors to Google servers
-gatherUsageStats = false
-
-[server]
-# Prevent Streamlit from trying to detect the external IP (avoids network hangs)
-enableCORS = false
-enableXsrfProtection = true
-headless = true
-
-[runner]
-# Faster rerun on file changes
-fastReruns = true
+[theme]
+base="light"
+primaryColor="#6C151E"
+backgroundColor="#F9EEE9"
+secondaryBackgroundColor="#FDF8F5"
+textColor="#1A0A0C"
+font="sans serif"
