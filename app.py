@@ -346,13 +346,7 @@ with hero_r:
     </div>
     """, unsafe_allow_html=True)
 
-# ══════════════════════════════════════════════════════════════════════════════
-# CHAT INPUT — ROOT LEVEL (CRITICAL: outside any column)
-# ══════════════════════════════════════════════════════════════════════════════
-user_input = st.chat_input("Ask about syllabus, attendance, exams, calculate classes, or create a study plan...")
-if user_input and user_input.strip():
-    send_message(user_input.strip())
-    st.rerun()
+
 
 # ══════════════════════════════════════════════════════════════════════════════
 # MAIN TWO-COLUMN LAYOUT
@@ -511,6 +505,11 @@ with col_chat:
       <span>Always verify important academic information officially.</span>
     </div>
     """, unsafe_allow_html=True)
+
+    user_input = st.chat_input("Ask about syllabus, attendance, exams, calculate classes, or create a study plan...")
+    if user_input and user_input.strip():
+        send_message(user_input.strip())
+        st.rerun()
 
 
 # ─── RIGHT COLUMN: STUDY PLANNER ─────────────────────────────────────────────
