@@ -203,7 +203,7 @@ pre code { background: transparent !important; color: #E2E8F0 !important; paddin
 label[data-testid="stWidgetLabel"] p, [data-testid="stWidgetLabel"] { font-size:0.82rem !important; font-weight:600 !important; color:#374151 !important; margin-bottom:4px !important; }
 
 /* ── BUTTONS ── */
-.stButton > button[kind="primary"], .stButton > button {
+.stButton > button[kind="primary"] {
     background:#6C151E !important; color:#FFFFFF !important;
     font-weight:700 !important; font-size:0.88rem !important;
     border-radius:10px !important; border:none !important;
@@ -214,13 +214,14 @@ label[data-testid="stWidgetLabel"] p, [data-testid="stWidgetLabel"] { font-size:
 .stButton > button:hover { background:#5A1019 !important; box-shadow:0 4px 14px rgba(108,21,30,.38) !important; transform:translateY(-1px) !important; }
 
 /* ── New Chat button secondary ── */
-.new-chat-btn .stButton > button {
+.stButton > button[kind="secondary"] {
+    text-align: left !important;
     background:transparent !important; color:#374151 !important;
     border:1px solid #D1D5DB !important; font-weight:600 !important;
     font-size:0.82rem !important; box-shadow:none !important;
     padding:7px 12px !important;
 }
-.new-chat-btn .stButton > button:hover { color:#6C151E !important; border-color:#6C151E !important; background:#FBF5F0 !important; transform:none !important; }
+.stButton > button[kind="secondary"]:hover { color:#6C151E !important; border-color:#6C151E !important; background:#FBF5F0 !important; transform:none !important; }
 
 /* ── PLAN CARDS ── */
 .plan-day { background:#FFFFFF; border:1px solid #E4E8EF; border-left:4px solid #6C151E; border-radius:9px; padding:10px 13px; margin-bottom:8px; }
@@ -245,21 +246,7 @@ label[data-testid="stWidgetLabel"] p, [data-testid="stWidgetLabel"] { font-size:
 [data-baseweb="input"] input { background:#FFFFFF !important; color:#1A0A0C !important; }
 [data-baseweb="base-input"] { background:#FFFFFF !important; }
 
-/* ── ACTION CARD BUTTONS (quick-start cards on empty state) ── */
-.card-btn .stButton > button {
-    background:#FFFFFF !important; color:#1A0A0C !important;
-    border:1px solid #D4A8AD !important; font-weight:600 !important;
-    font-size:0.85rem !important; box-shadow:none !important;
-    border-radius:12px !important; padding:13px 16px !important;
-    text-align:left !important;
-}
-.card-btn .stButton > button:hover {
-    border-color:#6C151E !important; background:#FBF5F0 !important;
-    color:#6C151E !important; transform:none !important;
-    box-shadow:0 3px 10px rgba(108,21,30,.1) !important;
-}
-
-/* ── CHAT INPUT ── */
+/* ── DIVIDER ── */
 div[data-testid="stChatInput"] { background:#FFFFFF !important; border-radius:12px !important; border:1.5px solid #D4A8AD !important; box-shadow:0 2px 10px rgba(108,21,30,.06) !important; }
 div[data-testid="stChatInput"] textarea { font-size:0.88rem !important; color:#1A0A0C !important; background:#FFFFFF !important; }
 div[data-testid="stChatInput"] textarea::placeholder { color:#9C7A7E !important; }
@@ -340,9 +327,7 @@ st.markdown("""
   </div>
   <div class="nav-right">
     <div class="nav-status"><div class="nav-status-dot"></div> NMAMIT Academic AI · Always ready</div>
-    <div class="nav-help">?</div>
-    <div class="nav-avatar">S</div>
-  </div>
+      </div>
 </div>
 """, unsafe_allow_html=True)
 
