@@ -69,15 +69,6 @@ html, body { background: #F5DABF !important; color: #111827 !important; }
 /* stExpander new selectors — avoid touching SVG/arrow spans */
 [data-testid="stExpander"] details { background: #FFFFFF !important; border: 1px solid #E4E8EF !important; border-radius: 10px !important; overflow: hidden !important; }
 [data-testid="stExpander"] details > div { color: #111827 !important; }
-[data-testid="stExpander"] details summary { display: flex !important; align-items: center !important; }
-/* Only color the text node inside summary, not the SVG arrow */
-[data-testid="stExpander"] details summary p,
-[data-testid="stExpander"] details summary > div { color: #374151 !important; font-weight: 600 !important; font-size: 0.85rem !important; }
-[data-testid="stExpander"] details summary:hover p,
-[data-testid="stExpander"] details summary:hover > div { color: #6C151E !important; }
-/* Hide any text that leaks out of expander SVG arrows */
-[data-testid="stExpander"] svg text { display: none !important; }
-.streamlit-expanderHeader svg { flex-shrink: 0 !important; }
 
 /* ── FILE UPLOADER ── */
 [data-testid="stFileUploader"] label { color: #374151 !important; font-weight: 600 !important; font-size: 0.85rem !important; }
