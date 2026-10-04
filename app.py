@@ -240,20 +240,39 @@ label[data-testid="stWidgetLabel"] p, [data-testid="stWidgetLabel"] { font-size:
 [data-testid="stMetricValue"] { font-size:1.4rem !important; font-weight:800 !important; color:#111827 !important; }
 [data-testid="stMetricDelta"] { font-size:0.82rem !important; font-weight:700 !important; }
 
+/* ── DATE INPUT WHITE BACKGROUND ── */
+.stDateInput > div > div > input { background:#FFFFFF !important; color:#1A0A0C !important; }
+[data-baseweb="input"] input { background:#FFFFFF !important; color:#1A0A0C !important; }
+[data-baseweb="base-input"] { background:#FFFFFF !important; }
+
+/* ── ACTION CARD BUTTONS (quick-start cards on empty state) ── */
+.card-btn .stButton > button {
+    background:#FFFFFF !important; color:#1A0A0C !important;
+    border:1px solid #D4A8AD !important; font-weight:600 !important;
+    font-size:0.85rem !important; box-shadow:none !important;
+    border-radius:12px !important; padding:13px 16px !important;
+    text-align:left !important;
+}
+.card-btn .stButton > button:hover {
+    border-color:#6C151E !important; background:#FBF5F0 !important;
+    color:#6C151E !important; transform:none !important;
+    box-shadow:0 3px 10px rgba(108,21,30,.1) !important;
+}
+
 /* ── CHAT INPUT ── */
-div[data-testid="stChatInput"] { background:#FFFFFF !important; border-radius:12px !important; border:1.5px solid #E4E8EF !important; box-shadow:0 2px 10px rgba(0,0,0,.05) !important; }
-div[data-testid="stChatInput"] textarea { font-size:0.88rem !important; color:#111827 !important; background:#FFFFFF !important; }
+div[data-testid="stChatInput"] { background:#FFFFFF !important; border-radius:12px !important; border:1.5px solid #D4A8AD !important; box-shadow:0 2px 10px rgba(108,21,30,.06) !important; }
+div[data-testid="stChatInput"] textarea { font-size:0.88rem !important; color:#1A0A0C !important; background:#FFFFFF !important; }
 div[data-testid="stChatInput"] textarea::placeholder { color:#9C7A7E !important; }
-div[data-testid="stChatInput"]:focus-within { border-color:#6C151E !important; box-shadow:0 0 0 3px rgba(108,21,30,.1), 0 2px 10px rgba(0,0,0,.05) !important; }
+div[data-testid="stChatInput"]:focus-within { border-color:#6C151E !important; box-shadow:0 0 0 3px rgba(108,21,30,.1), 0 2px 10px rgba(108,21,30,.06) !important; }
 
 /* ── DIVIDER ── */
-hr { border:none !important; border-top:1px solid #E4E8EF !important; margin:12px 0 !important; }
+hr { border:none !important; border-top:1px solid #D4A8AD !important; margin:12px 0 !important; }
 
 /* ── FOOTER ── */
-.page-footer { display:flex; justify-content:space-between; align-items:center; font-size:0.7rem; color:#5C3A3E !important; padding:8px 2px 0; margin-top:6px; border-top:1px solid #E4E8EF; }
+.page-footer { display:flex; justify-content:space-between; align-items:center; font-size:0.7rem; color:#5C3A3E !important; padding:8px 2px 0; margin-top:6px; border-top:1px solid #D4A8AD; }
 
 /* ── SCROLLBAR ── */
-::-webkit-scrollbar { width:5px; } ::-webkit-scrollbar-track { background:transparent; } ::-webkit-scrollbar-thumb { background:#D1D5DB; border-radius:99px; }
+::-webkit-scrollbar { width:5px; } ::-webkit-scrollbar-track { background:transparent; } ::-webkit-scrollbar-thumb { background:#D4A8AD; border-radius:99px; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -409,23 +428,12 @@ with col_chat:
         ]:
             col_btn = st.container()
             with col_btn:
-                st.markdown(f"""
-                <div style="display:flex;align-items:center;background:#FFFFFF;border:1px solid #E4E8EF;
-                     border-radius:12px;padding:12px 16px;margin-bottom:8px;gap:12px;
-                     transition:all .15s;cursor:pointer;">
-                  <div style="width:36px;height:36px;border-radius:9px;background:#F9EEE9;
-                       display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;">{icon}</div>
-                  <div style="flex:1;min-width:0;">
-                    <div style="font-size:0.88rem;font-weight:700;color:#111827;">{title}</div>
-                    <div style="font-size:0.75rem;color:#5C3A3E;margin-top:1px;">{desc}</div>
-                  </div>
-                  <div style="color:#9C7A7E;font-size:1.1rem;font-weight:600;">›</div>
-                </div>
-                """, unsafe_allow_html=True)
-                if st.button(f"{icon} {title}", key=f"btn_{key}", use_container_width=True,
+                st.markdown('<div class="card-btn">', unsafe_allow_html=True)
+                if st.button(f"{icon}  {title}  ›\n{desc}", key=f"btn_{key}", use_container_width=True,
                              help=f"Ask: {prompt}"):
                     st.session_state.pending_prompt = prompt
                     st.rerun()
+                st.markdown('</div>', unsafe_allow_html=True)
 
         st.markdown('<div class="empty-hint">🍃 No question is too small.</div>', unsafe_allow_html=True)
 
