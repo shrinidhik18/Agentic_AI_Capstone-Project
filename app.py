@@ -20,7 +20,7 @@ html, body { background: #F5DABF !important; color: #111827 !important; }
 .stApp > header { display: none !important; }
 #MainMenu, footer, header { visibility: hidden !important; height: 0 !important; }
 .block-container { padding: 20px 28px 80px 28px !important; max-width: 1400px !important; }
-* { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important; }
+
 
 /* ── FORCE ALL BASE TEXT DARK (safe, no SVG/icon bleed) ── */
 [class*="stMarkdown"] p { color: #111827 !important; margin-bottom: 4px; }
