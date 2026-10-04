@@ -1,5 +1,7 @@
 # AI-Based College Academic Assistant
 
+🚀 **Live Demo:** [https://agenticaicapstone-project-lxedmhb457pljbp2m4mbtx.streamlit.app/](https://agenticaicapstone-project-lxedmhb457pljbp2m4mbtx.streamlit.app/)
+
 An AI-powered academic assistant for college students that answers academic questions by retrieving information from official college documents (syllabus, academic regulations, examination guidelines, internship guidelines, student FAQs) and builds personalized study plans using LangGraph stateful orchestration and FAISS RAG vector retrieval.
 
 ---
